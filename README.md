@@ -27,7 +27,8 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
    * +600 for Mission Complete,<br>
    * +100 for collecting a Checkpoint,<br>
    * -100 for collisions (Walls/Boxes/Chaser),<br>
-6. Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
+6. Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process,<br>
+7. Possibility of stopping and renewing trainings thanks to .pth files saved every 100 episodes.<br>
 
 # The Algorithm (Soft Actor-Critic)
 I used SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, which helps him learn more efficiently, not only based on current run, but also on a lot of experience gained in the past (comparing different routes, strategies, speeds, etc.).
