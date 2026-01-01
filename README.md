@@ -1,7 +1,7 @@
 # Project Overview
-This project implements a robot navigation system using Deep Reinforcement Learning (DRL) within a ROS2 (Robot Operating System) and Gazebo simulation environment.
-The goal of the agent ("Simple Robot - Avoider") is not just to go from point A to point B. It has to complete a task with several steps, move through a messy room, and most importantly avoid a moving enemy robot (“Chaser”) that patrols the area.
-The agent is trained using the Soft Actor-Critic (SAC) algorithm, allowing it to learn continuous control policies (linear and angular velocity) from scratch based on Lidar sensor data.
+This project implements a robot navigation system using Deep Reinforcement Learning (DRL) within a ROS2 (Robot Operating System) and Gazebo simulation environment.<br>
+The goal of the agent ("Simple Robot - Avoider") is not just to go from point A to point B. It has to complete a task with several steps, move through a messy room, and most importantly avoid a moving enemy robot (“Chaser”) that patrols the area.<br>
+The agent is trained using the Soft Actor-Critic (SAC) algorithm, allowing it to learn continuous control policies (linear and angular velocity) from scratch based on Lidar sensor data.<br>
 
 The Environment
 The simulation takes place in a closed 9x9 meter room containing:
@@ -42,13 +42,13 @@ Output (Action Space): 2 continuous values
 # Training Results (after 2500 Episodes)
 The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.
 
-Learning Curve
-Initially, the robot struggled with collisions, often hitting walls or the Chaser. Around episode 800-1000, the agent began to consistently understand the concept of checkpoints. By episode 2200+, the success rate increased significantly as the robot learned to balance speed with safety.
+Learning Curve<br>
+Initially, the robot struggled with collisions, often hitting walls or the Chaser. Around episode 800-1000, the agent began to consistently understand the concept of checkpoints. By episode 2200+, the success rate increased significantly as the robot learned to balance speed with safety.<br>
 
-Final Performance Stats
-After training, the model achieves the following metrics:
-Success Rate: ~50% (Mission Complete)
-Collision Rate: Reduced significantly compared to early episodes
+Final Performance Stats<br>
+After training, the model achieves the following metrics:<br>
+Success Rate: ~50% (Mission Complete)<br>
+Collision Rate: Reduced significantly compared to early episodes<br>
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
 ![results](https://github.com/user-attachments/assets/a701f32b-e57f-4fa6-a7db-250a0719b4b6)
 
