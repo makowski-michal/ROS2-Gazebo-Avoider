@@ -53,6 +53,7 @@ After training, the model achieves the following metrics:<br>
 Success Rate: ~60-75% (Mission Complete) during long periods of training<br>
 Collision Rate: Reduced significantly compared to early episodes<br>
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
+
 ![results2](https://github.com/user-attachments/assets/6e3ad926-e52f-43cb-a2ca-0a5a3c84c5fe)
 
 # Video of Successful Mission Run
@@ -84,4 +85,5 @@ source install/setup.bash ``
 # Future Improvements:
 1. Training: More training time to improve the success rate to 80-90%.
 2. Complex Chaser AI: Currently, the chaser moves in a circle. Future versions could implement a chaser that actively hunts the player.
-3. Real World Transfer: Porting the trained policy to a physical TurtleBot or similar platform.
+3. Tougher Area: Adding second chaser robot.
+4. Different Scenarios: Implementing different maps, with different placements of static boxes and different chasers' fixed paths.
