@@ -30,14 +30,16 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
 6. Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
 
 # The Algorithm (Soft Actor-Critic)
-I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).<br>
-**Input (Observation Space): 76 dimensions**<br>
- - 72 Lidar rays (normalized distance)<br>
- - Relative coordinates to the current target (Distance & Angle)<br>
- - Relative coordinates to the Chaser robot<br></n>
-**Output (Action Space): 2 continuous values**<br>
- - Linear Velocity (Forward/Backward)<br>
- - Angular Velocity (Turn Left/Right)<br>
+I used SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).
+
+**Input (Observation Space): 76 dimensions**
+- 72 Lidar rays (normalized distance)
+- Relative coordinates to the current target (Distance & Angle)
+- Relative coordinates to the Chaser robot
+
+**Output (Action Space): 2 continuous values**
+- Linear Velocity (Forward/Backward)
+- Angular Velocity (Turn Left/Right)
 
 # Training Results (after 2500 Episodes)
 **The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.**<br>
