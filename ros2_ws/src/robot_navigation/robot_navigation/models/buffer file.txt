@@ -1,0 +1,3 @@
+The buffer .pkl file is too large for GitHub.
+You can download it here: 
+The rest of .pth files have not been uploaded, because of the size and quantity of them.
