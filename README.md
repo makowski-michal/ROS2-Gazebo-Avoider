@@ -49,7 +49,8 @@ After training, the model achieves the following metrics:
 Success Rate: ~50% (Mission Complete)
 Collision Rate: Reduced significantly compared to early episodes
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop
-https://github.com/makowski-michal/ROS2-Gazebo-Avoider/issues/1#issue-3774941000
+![results](https://github.com/user-attachments/assets/a701f32b-e57f-4fa6-a7db-250a0719b4b6)
+
 
 # Demo Run
 Here is a demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
