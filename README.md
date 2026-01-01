@@ -6,13 +6,13 @@ The agent is trained using the Soft Actor-Critic (SAC) algorithm, allowing it to
 The Environment
 The simulation takes place in a closed 9x9 meter room containing:
  - Static Obstacles: Several boxes placed to block direct paths,
- - The Agent: A differential drive robot equipped with a 360-degree Lidar sensor,
+ - The Avoider: Main robot equipped with a 360-degree Lidar sensor,
  - The Chaser: A hostile robot that moves in a predefined, fixed circular path, creating a dynamic threat,
  - Objectives:
-   1. Start at the Base (green square),
-   2. Collect Checkpoint 1 (CP1),
-   3. Collect Checkpoint 2 (CP2),
-   4. Return safely to Base.
+  1. Start at the Base (green square),
+  2. Collect Checkpoint 1 (CP1),
+  3. Collect Checkpoint 2 (CP2),
+  4. Return safely to Base.
 
 # Map Visualization:
 # ZDJECIE MAPY
@@ -49,7 +49,7 @@ After training, the model achieves the following metrics:
 Success Rate: ~50% (Mission Complete)
 Collision Rate: Reduced significantly compared to early episodes
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop
-!(./images/results.jpg)
+https://github.com/makowski-michal/ROS2-Gazebo-Avoider/issues/1#issue-3774941000
 
 # Demo Run
 Here is a demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
