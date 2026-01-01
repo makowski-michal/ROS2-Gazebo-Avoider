@@ -3,16 +3,16 @@ This project implements a robot navigation system using Deep Reinforcement Learn
 The goal of the agent ("Simple Robot - Avoider") is not just to go from point A to point B. It has to complete a task with several steps, move through a messy room, and most importantly avoid a moving enemy robot (“Chaser”) that patrols the area.<br>
 The agent is trained using the Soft Actor-Critic (SAC) algorithm, allowing it to learn continuous control policies (linear and angular velocity) from scratch based on Lidar sensor data.<br>
 
-The Environment<br>
+# The Environment
 The simulation takes place in a closed 9x9 meter room containing:<br>
  - Static Obstacles: Several boxes placed to block direct paths,<br>
  - The Avoider: Main robot equipped with a 360-degree Lidar sensor,<br>
  - The Chaser: A hostile robot that moves in a predefined, fixed circular path, creating a dynamic threat,<br>
  - Objectives:<br>
-  1. Start at the Base (green square),<br>
-  2. Collect Checkpoint 1 (CP1),<br>
-  3. Collect Checkpoint 2 (CP2),<br>
-  4. Return safely to Base.<br>
+  1. Start at the Base (green square),
+  2. Collect Checkpoint 1 (CP1),
+  3. Collect Checkpoint 2 (CP2),
+  4. Return safely to Base.
 
 # Map Visualization:
 ![current_map](https://github.com/user-attachments/assets/a95ab80c-39db-4573-8dbf-76541be47dd7)
