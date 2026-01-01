@@ -1,5 +1,5 @@
 # Project Overview
-This project implements a robot navigation system using Deep Reinforcement Learning (DRL) within a ROS2 (Robot Operating System) and Gazebo simulation environment.<br>
+**This project implements a robot navigation system using Deep Reinforcement Learning (DRL) within a ROS2 (Robot Operating System) and Gazebo simulation environment.**<br>
 The goal of the agent ("Simple Robot - Avoider") is not just to go from point A to point B. It has to complete a task with several steps, move through a messy room, and most importantly avoid a moving enemy robot (“Chaser”) that patrols the area.<br>
 The agent is trained using the Soft Actor-Critic (SAC) algorithm, allowing it to learn continuous control policies (linear and angular velocity) from scratch based on Lidar sensor data.<br>
 
@@ -19,33 +19,33 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
 
 
 # Key Features:
-Continuous Control: The robot controls its speed and turning angle smoothly, rather than choosing from a discrete list of moves (like "turn left", "go forward").<br>
-Dynamic Avoidance: Unlike standard pathfinding, the robot learns to predict and avoid a moving adversary (the Chaser).<br>
-Multi-Objective Mission: The state machine handles sequential goals (CP1 -> CP2 -> Base), requiring the robot to adapt its pathing logic during the episode.<br>
-Custom Gym Environment: robot_env.py handles sensor processing, reward calculation, and simulation resetting.<br>
-Robust Reward System:
- * +600 for Mission Complete,<br>
- * +100 for collecting a Checkpoint,<br>
- * -100 for collisions (Walls/Boxes/Chaser),<br>
-Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
+1. Continuous Control: The robot controls its speed and turning angle smoothly, rather than choosing from a discrete list of moves (like "turn left", "go forward").<br>
+2. Dynamic Avoidance: Unlike standard pathfinding, the robot learns to predict and avoid a moving adversary (the Chaser).<br>
+3. Multi-Objective Mission: The state machine handles sequential goals (CP1 -> CP2 -> Base), requiring the robot to adapt its pathing logic during the episode.<br>
+4. Custom Gym Environment: robot_env.py handles sensor processing, reward calculation, and simulation resetting.<br>
+5. Robust Reward System:
+   * +600 for Mission Complete,<br>
+   * +100 for collecting a Checkpoint,<br>
+   * -100 for collisions (Walls/Boxes/Chaser),<br>
+6. Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
 
 # The Algorithm (Soft Actor-Critic)
 I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).<br>
-Input (Observation Space): 76 dimensions<br>
+**Input (Observation Space): 76 dimensions**<br>
  - 72 Lidar rays (normalized distance)<br>
  - Relative coordinates to the current target (Distance & Angle)<br>
  - Relative coordinates to the Chaser robot<br><br>
-Output (Action Space): 2 continuous values<br>
+**Output (Action Space): 2 continuous values**<br>
  - Linear Velocity (Forward/Backward)<br>
  - Angular Velocity (Turn Left/Right)<br>
 
 # Training Results (after 2500 Episodes)
 The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.<br>
 
-Learning Curve<br>
+**Learning Curve**<br>
 Initially, the robot struggled with collisions, often hitting walls or the Chaser. Around episode 800-1000, the agent began to consistently understand the concept of checkpoints. By episode 2200+, the success rate increased significantly as the robot learned to balance speed with safety.<br>
 
-Final Performance Stats<br>
+**Final Performance Stats**<br>
 After training, the model achieves the following metrics:<br>
 Success Rate: ~50% (Mission Complete)<br>
 Collision Rate: Reduced significantly compared to early episodes<br>
