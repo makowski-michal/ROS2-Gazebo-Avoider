@@ -34,13 +34,13 @@ I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because i
 **Input (Observation Space): 76 dimensions**<br>
  - 72 Lidar rays (normalized distance)<br>
  - Relative coordinates to the current target (Distance & Angle)<br>
- - Relative coordinates to the Chaser robot<br><br>
+ - Relative coordinates to the Chaser robot<br></n>
 **Output (Action Space): 2 continuous values**<br>
  - Linear Velocity (Forward/Backward)<br>
  - Angular Velocity (Turn Left/Right)<br>
 
 # Training Results (after 2500 Episodes)
-The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.<br>
+**The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.**<br>
 
 **Learning Curve**<br>
 Initially, the robot struggled with collisions, often hitting walls or the Chaser. Around episode 800-1000, the agent began to consistently understand the concept of checkpoints. By episode 2200+, the success rate increased significantly as the robot learned to balance speed with safety.<br>
