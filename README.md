@@ -49,15 +49,14 @@ Initially, the robot struggled with collisions, often hitting walls or the Chase
 
 **Final Performance Stats**<br>
 After training, the model achieves the following metrics:<br>
-Success Rate: ~50% (Mission Complete)<br>
+Success Rate: ~60-75% (Mission Complete) during long periods of training<br>
 Collision Rate: Reduced significantly compared to early episodes<br>
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
-![results](https://github.com/user-attachments/assets/a701f32b-e57f-4fa6-a7db-250a0719b4b6)
-
+![results2](https://github.com/user-attachments/assets/6e3ad926-e52f-43cb-a2ca-0a5a3c84c5fe)
 
 # Demo Run
-Here is a demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
-# VIDEO RUN
+Here is a sped-up demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
+https://github.com/user-attachments/assets/31775b05-3f3d-4113-a604-2e59881efd08
 
 # How to Run
 Prerequisites:
