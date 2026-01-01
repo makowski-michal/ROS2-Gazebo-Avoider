@@ -34,7 +34,7 @@ I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because i
 Input (Observation Space): 76 dimensions<br>
  - 72 Lidar rays (normalized distance)<br>
  - Relative coordinates to the current target (Distance & Angle)<br>
- - Relative coordinates to the Chaser robot<br>
+ - Relative coordinates to the Chaser robot<br><br>
 Output (Action Space): 2 continuous values<br>
  - Linear Velocity (Forward/Backward)<br>
  - Angular Velocity (Turn Left/Right)<br>
