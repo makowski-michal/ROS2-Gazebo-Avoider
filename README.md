@@ -55,10 +55,14 @@ Collision Rate: Reduced significantly compared to early episodes<br>
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
 ![results2](https://github.com/user-attachments/assets/6e3ad926-e52f-43cb-a2ca-0a5a3c84c5fe)
 
-# Demo Run
+# Video of Successful Mission Run
 Here is a sped-up demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
 
 https://github.com/user-attachments/assets/31775b05-3f3d-4113-a604-2e59881efd08
+
+# Video of Robot's Crash and Mission Restart
+
+https://github.com/user-attachments/assets/18c7c541-13a8-4cb3-87ba-e3b5ba7a2669
 
 # How to Run
 Prerequisites:
