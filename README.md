@@ -15,13 +15,14 @@ The simulation takes place in a closed 9x9 meter room containing:
   4. Return safely to Base.
 
 # Map Visualization:
-# ZDJECIE MAPY
+![current_map](https://github.com/user-attachments/assets/a95ab80c-39db-4573-8dbf-76541be47dd7)
+
 
 # Key Features:
-Continuous Control: The robot controls its speed and turning angle smoothly, rather than choosing from a discrete list of moves (like "turn left", "go forward").
-Dynamic Avoidance: Unlike standard pathfinding, the robot learns to predict and avoid a moving adversary (the Chaser).
-Multi-Objective Mission: The state machine handles sequential goals (CP1 -> CP2 -> Base), requiring the robot to adapt its pathing logic during the episode.
-Custom Gym Environment: robot_env.py handles sensor processing, reward calculation, and simulation resetting.
+Continuous Control: The robot controls its speed and turning angle smoothly, rather than choosing from a discrete list of moves (like "turn left", "go forward").<br>
+Dynamic Avoidance: Unlike standard pathfinding, the robot learns to predict and avoid a moving adversary (the Chaser).<br>
+Multi-Objective Mission: The state machine handles sequential goals (CP1 -> CP2 -> Base), requiring the robot to adapt its pathing logic during the episode.<br>
+Custom Gym Environment: robot_env.py handles sensor processing, reward calculation, and simulation resetting.<br>
 Robust Reward System:
  * +600 for Mission Complete,
  * +100 for collecting a Checkpoint,
@@ -29,11 +30,11 @@ Robust Reward System:
  * Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.
 
 # The Algorithm (Soft Actor-Critic)
-I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).
+I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).<br>
 Input (Observation Space): 76 dimensions
  - 72 Lidar rays (normalized distance)
  - Relative coordinates to the current target (Distance & Angle)
- - Relative coordinates to the Chaser robot
+ - Relative coordinates to the Chaser robot<br>
 Output (Action Space): 2 continuous values
  - Linear Velocity (Forward/Backward)
  - Angular Velocity (Turn Left/Right)
@@ -48,7 +49,7 @@ Final Performance Stats
 After training, the model achieves the following metrics:
 Success Rate: ~50% (Mission Complete)
 Collision Rate: Reduced significantly compared to early episodes
-Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop
+Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
 ![results](https://github.com/user-attachments/assets/a701f32b-e57f-4fa6-a7db-250a0719b4b6)
 
 
