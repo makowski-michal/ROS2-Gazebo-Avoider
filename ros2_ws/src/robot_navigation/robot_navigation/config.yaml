@@ -1,0 +1,30 @@
+environment:
+  max_steps: 1750
+  base_position: [0.0, -3.2]
+  checkpoint_1: [-2.0, 2.0]
+  checkpoint_2: [3.0, 2.5]
+  checkpoint_radius: 0.7
+  collision_threshold: 0.35
+
+chaser:
+  enabled: true
+  start_position: [1.75, 0.0]
+  target_radius: 1.75
+  angular_velocity: -0.12
+  collision_radius: 0.50
+
+rewards:
+  checkpoint_collected: 100.0
+  mission_complete: 600.0
+  progress_scale: 4.0
+  collision_penalty: -100.0
+
+observation:
+  lidar_samples: 72
+  lidar_max_range: 10.0
+
+action:
+  max_linear_speed: 0.5
+  max_angular_speed: 1.5
+  min_linear_speed: -0.2
+  min_angular_speed: -1.5
