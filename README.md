@@ -9,10 +9,10 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
  - The Avoider: Main robot equipped with a 360-degree Lidar sensor,<br>
  - The Chaser: A hostile robot that moves in a predefined, fixed circular path, creating a dynamic threat,<br>
  - Objectives:
-  1. Start at the Base (green square),
-  2. Collect Checkpoint 1 (CP1),
-  3. Collect Checkpoint 2 (CP2),
-  4. Return safely to Base.
+   1. Start at the Base (green square),
+   2. Collect Checkpoint 1 (CP1),
+   3. Collect Checkpoint 2 (CP2),
+   4. Return safely to Base.
 
 # Map Visualization:
 ![current_map](https://github.com/user-attachments/assets/a95ab80c-39db-4573-8dbf-76541be47dd7)
@@ -27,7 +27,7 @@ Robust Reward System:
  * +600 for Mission Complete,<br>
  * +100 for collecting a Checkpoint,<br>
  * -100 for collisions (Walls/Boxes/Chaser),<br>
- * Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
+Dense Reward: Constant feedback based on distance to the current target to guide and fasten the learning process.<br>
 
 # The Algorithm (Soft Actor-Critic)
 I use SAC, an off-policy actor-critic deep RL algorithm. It was chosen because it maximizes the trade-off between expected reward and entropy (randomness), encouraging the robot to explore the environment thoroughly during the early stages of training. Also, while doing research on similar works, this algorithm was used the most and proposed as the best one in this case. Avoider (main robot) has buffer experience of 1,000,000 time steps, what helps him learn more efficiently, not only based on current run, but also on a lot experience gained in the past (comparing different routes, strategies, speeds, etc.).<br>
