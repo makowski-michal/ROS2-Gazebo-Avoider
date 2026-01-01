@@ -8,7 +8,7 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
  - Static Obstacles: Several boxes placed to block direct paths,<br>
  - The Avoider: Main robot equipped with a 360-degree Lidar sensor,<br>
  - The Chaser: A hostile robot that moves in a predefined, fixed circular path, creating a dynamic threat,<br>
- - Objectives:<br>
+ - Objectives:
   1. Start at the Base (green square),
   2. Collect Checkpoint 1 (CP1),
   3. Collect Checkpoint 2 (CP2),
@@ -23,7 +23,7 @@ Continuous Control: The robot controls its speed and turning angle smoothly, rat
 Dynamic Avoidance: Unlike standard pathfinding, the robot learns to predict and avoid a moving adversary (the Chaser).<br>
 Multi-Objective Mission: The state machine handles sequential goals (CP1 -> CP2 -> Base), requiring the robot to adapt its pathing logic during the episode.<br>
 Custom Gym Environment: robot_env.py handles sensor processing, reward calculation, and simulation resetting.<br>
-Robust Reward System:<br>
+Robust Reward System:
  * +600 for Mission Complete,<br>
  * +100 for collecting a Checkpoint,<br>
  * -100 for collisions (Walls/Boxes/Chaser),<br>
