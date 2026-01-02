@@ -57,7 +57,7 @@ Average Steps: The robot learned to take optimized paths, reducing the time need
 
 ![results2](https://github.com/user-attachments/assets/6e3ad926-e52f-43cb-a2ca-0a5a3c84c5fe)
 
-# Video of Successful Mission Run
+# Video of a Successful Mission Run
 Here is a sped-up demonstration of the fully trained agent navigating the environment, collecting all checkpoints, and successfully avoiding the Chaser.
 
 https://github.com/user-attachments/assets/31775b05-3f3d-4113-a604-2e59881efd08
