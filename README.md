@@ -15,7 +15,8 @@ The simulation takes place in a closed 9x9 meter room containing:<br>
    4. Return safely to Base.
 
 # Map Visualization:
-![current_map](https://github.com/user-attachments/assets/a95ab80c-39db-4573-8dbf-76541be47dd7)
+![current_map](https://github.com/user-attachments/assets/ebdd2f01-7587-48f7-a5b0-3a041704d456)
+
 
 
 # Key Features:
