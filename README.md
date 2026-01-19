@@ -44,14 +44,14 @@ I used SAC, an off-policy actor-critic deep RL algorithm. It was chosen because 
 - Angular Velocity (Turn Left/Right)
 
 # Training Results (after 2500 Episodes)
-**The final model was trained over 2500 episodes. Below is the report on the agent's performance progression.**<br>
+**The final model was trained over 2700 episodes. Below is the report on the agent's performance progression.**<br>
 
 **Learning Curve**<br>
 Initially, the robot struggled with collisions, often hitting walls or the Chaser. Around episode 800-1000, the agent began to consistently understand the concept of checkpoints. By episode 2200+, the success rate increased significantly as the robot learned to balance speed with safety.<br>
 
 **Final Performance Stats**<br>
 After training, the model achieves the following metrics:<br>
-Success Rate: ~60-75% (Mission Complete) during long periods of training<br>
+Success Rate: ~60-75% (Mission Complete) during long periods of training and ~90% during testing (exploraion = off)<br>
 Collision Rate: Reduced significantly compared to early episodes<br>
 Average Steps: The robot learned to take optimized paths, reducing the time needed to complete the loop <br>
 
