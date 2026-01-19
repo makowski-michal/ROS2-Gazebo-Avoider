@@ -13,7 +13,7 @@ class SAC(object):
 # the teacher that coordinates everything: the robot, the judges, the training
     def __init__(
         self,
-        state_dim, # how many numbers describe what robot sees (82)
+        state_dim, # how many numbers describe what robot sees (76)
         action_dim, # how many actions robot can do (2: speed and turn)
         device, # use gpu or normal computer
         max_action, # biggest action value allowed
