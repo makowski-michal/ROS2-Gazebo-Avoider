@@ -82,6 +82,8 @@ colcon build
 source install/setup.bash ``
 2. To start training the robot from scratch (or resume from a checkpoint):
 `` python3 train.py ``
+3. To test the robot (exploration = off):
+`` python3 test.py ``
 
 # Future Improvements:
 1. Training: More training time to improve the success rate to 80-90%.
